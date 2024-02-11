@@ -5,10 +5,10 @@
 
 class PacketRD : public AOPacket
 {
-  public:
-    PacketRD(QStringList &contents);
-    virtual PacketInfo getPacketInfo() const;
-    virtual void handlePacket(AreaData *area, AOClient &client) const;
-    virtual bool validatePacket() const;
+public:
+  PacketRD(QStringList &contents);
+  virtual PacketInfo getPacketInfo() const;
+  virtual void handlePacket(AreaData *area, AOClient &client) const;
+  virtual bool validatePacket() const;
 };
 #endif
