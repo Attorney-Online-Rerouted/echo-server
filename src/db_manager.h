@@ -15,8 +15,7 @@
 //    You should have received a copy of the GNU Affero General Public License      //
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.        //
 //////////////////////////////////////////////////////////////////////////////////////
-#ifndef BAN_MANAGER_H
-#define BAN_MANAGER_H
+#pragma once
 
 #define DB_VERSION 2
 
@@ -273,5 +272,3 @@ private:
    */
   void updateDB(int current_version);
 };
-
-#endif // BAN_MANAGER_H

@@ -15,8 +15,7 @@
 //    You should have received a copy of the GNU Affero General Public License      //
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.        //
 //////////////////////////////////////////////////////////////////////////////////////
-#ifndef AOCLIENT_H
-#define AOCLIENT_H
+#pragma once
 
 #include <algorithm>
 
@@ -2114,5 +2113,3 @@ signals:
    */
   void clientSuccessfullyDisconnected(const int &f_user_id);
 };
-
-#endif // AOCLIENT_H

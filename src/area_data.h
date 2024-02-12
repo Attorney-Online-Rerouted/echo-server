@@ -15,8 +15,7 @@
 //    You should have received a copy of the GNU Affero General Public License      //
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.        //
 //////////////////////////////////////////////////////////////////////////////////////
-#ifndef AREA_DATA_H
-#define AREA_DATA_H
+#pragma once
 
 #include <QDebug>
 #include <QElapsedTimer>
@@ -1209,5 +1208,3 @@ private slots:
    */
   void allowMessage();
 };
-
-#endif // AREA_DATA_H

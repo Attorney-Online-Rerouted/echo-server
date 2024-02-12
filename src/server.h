@@ -15,8 +15,7 @@
 //    You should have received a copy of the GNU Affero General Public License      //
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.        //
 //////////////////////////////////////////////////////////////////////////////////////
-#ifndef SERVER_H
-#define SERVER_H
+#pragma once
 
 #include <QCoreApplication>
 #include <QDebug>
@@ -577,5 +576,3 @@ private slots:
    */
   void allowMessage();
 };
-
-#endif // SERVER_H

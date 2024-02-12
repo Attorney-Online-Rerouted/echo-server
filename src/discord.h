@@ -15,8 +15,7 @@
 //    You should have received a copy of the GNU Affero General Public License      //
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.        //
 //////////////////////////////////////////////////////////////////////////////////////
-#ifndef DISCORD_H
-#define DISCORD_H
+#pragma once
 
 #include <QCoreApplication>
 #include <QtNetwork>
@@ -161,5 +160,3 @@ private slots:
    */
   QJsonDocument constructUptimeJson(const QString &f_timeExpired);
 };
-
-#endif // DISCORD_H

@@ -15,8 +15,7 @@
 //    You should have received a copy of the GNU Affero General Public License      //
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.        //
 //////////////////////////////////////////////////////////////////////////////////////
-#ifndef PACKET_MANAGER_H
-#define PACKET_MANAGER_H
+#pragma once
 
 #include <QByteArray>
 #include <QDebug>
@@ -135,5 +134,3 @@ protected:
    */
   const QString packetFinished = "%";
 };
-
-#endif // PACKET_MANAGER_H

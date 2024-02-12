@@ -15,8 +15,8 @@
 //    You should have received a copy of the GNU Affero General Public License      //
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.        //
 //////////////////////////////////////////////////////////////////////////////////////
-#ifndef WRITER_FULL_H
-#define WRITER_FULL_H
+#pragma once
+
 #include <QDateTime>
 #include <QDir>
 #include <QFile>
@@ -70,5 +70,3 @@ private:
    */
   QDir l_dir;
 };
-
-#endif // WRITER_FULL_H

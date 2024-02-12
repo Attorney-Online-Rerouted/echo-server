@@ -15,8 +15,7 @@
 //    You should have received a copy of the GNU Affero General Public License      //
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.        //
 //////////////////////////////////////////////////////////////////////////////////////
-#ifndef MUSIC_MANAGER_H
-#define MUSIC_MANAGER_H
+#pragma once
 
 #include <QHash>
 #include <QMap>
@@ -210,5 +209,3 @@ private:
    */
   QStringList m_cdns;
 };
-
-#endif // MUSIC_MANAGER_H

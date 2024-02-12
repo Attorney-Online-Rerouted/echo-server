@@ -1,5 +1,4 @@
-#ifndef COMMAND_EXTENSION_H
-#define COMMAND_EXTENSION_H
+#pragma once
 
 #include <QMap>
 #include <QObject>
@@ -193,5 +192,3 @@ private:
    */
   QMap<QString, CommandExtension> m_extensions;
 };
-
-#endif // COMMAND_EXTENSION_H

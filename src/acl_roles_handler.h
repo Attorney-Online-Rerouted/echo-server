@@ -1,5 +1,4 @@
-#ifndef ACL_ROLES_HANDLER_H
-#define ACL_ROLES_HANDLER_H
+#pragma once
 
 #include <QFlags>
 #include <QHash>
@@ -219,5 +218,3 @@ private:
    */
   QHash<QString, ACLRole> m_roles;
 };
-
-#endif // ACL_ROLES_HANDLER_H

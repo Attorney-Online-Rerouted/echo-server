@@ -15,8 +15,7 @@
 //    You should have received a copy of the GNU Affero General Public License      //
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.        //
 //////////////////////////////////////////////////////////////////////////////////////
-#ifndef CONFIG_MANAGER_H
-#define CONFIG_MANAGER_H
+#pragma once
 
 #define CONFIG_VERSION 1
 
@@ -578,5 +577,3 @@ private:
    */
   static QStringList loadConfigFile(const QString filename);
 };
-
-#endif // CONFIG_MANAGER_H
