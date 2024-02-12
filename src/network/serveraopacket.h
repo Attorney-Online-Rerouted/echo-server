@@ -34,15 +34,15 @@ class AOClient;
  * @see https://github.com/AttorneyOnline/docs/blob/master/docs/development/network.md for a general explanation
  * on Attorney Online 2's network protocol.
  */
-class AOPacket
+class ServerAOPacket
 {
 public:
-  AOPacket(QStringList p_contents);
+  ServerAOPacket(QStringList p_contents);
 
   /**
-   * @brief Destructor for the AOPacket
+   * @brief Destructor for the ServerAOPacket
    */
-  ~AOPacket(){};
+  ~ServerAOPacket(){};
 
   /**
    * @brief Returns the current content of the packet

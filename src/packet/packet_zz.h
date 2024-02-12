@@ -1,9 +1,9 @@
 #ifndef PACKET_ZZ_H
 #define PACKET_ZZ_H
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class PacketZZ : public AOPacket
+class PacketZZ : public ServerAOPacket
 {
 public:
   PacketZZ(QStringList &contents);

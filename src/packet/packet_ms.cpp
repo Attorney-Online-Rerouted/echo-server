@@ -6,7 +6,7 @@
 #include <QDebug>
 
 PacketMS::PacketMS(QStringList &contents)
-    : AOPacket(contents)
+    : ServerAOPacket(contents)
 {}
 
 PacketInfo PacketMS::getPacketInfo() const
@@ -28,7 +28,7 @@ void PacketMS::handlePacket(AreaData *area, AOClient &client) const
     return;
   }
 
-  AOPacket *validated_packet = validateIcPacket(client);
+  ServerAOPacket *validated_packet = validateIcPacket(client);
   if (validated_packet->getPacketInfo().header == "INVALID")
   {
     return;
@@ -47,7 +47,7 @@ void PacketMS::handlePacket(AreaData *area, AOClient &client) const
   client.getServer()->startMessageFloodguard(ConfigManager::globalMessageFloodguard());
 }
 
-AOPacket *PacketMS::validateIcPacket(AOClient &client) const
+ServerAOPacket *PacketMS::validateIcPacket(AOClient &client) const
 {
   // Welcome to the super cursed server-side IC chat validation hell
 
@@ -59,7 +59,7 @@ AOPacket *PacketMS::validateIcPacket(AOClient &client) const
   // This packet can be sent with a minimum required args of 15.
   // 2.6+ extensions raise this to 19, and 2.8 further raises this to 26.
 
-  AOPacket *l_invalid = PacketFactory::createPacket("INVALID", {});
+    ServerAOPacket *l_invalid = PacketFactory::createPacket("INVALID", {});
   QStringList l_args;
   if (client.isSpectator() || client.m_current_char.isEmpty() || !client.m_joined)
   {

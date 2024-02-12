@@ -4,7 +4,7 @@
 #include <QDebug>
 
 PacketSetcase::PacketSetcase(QStringList &contents)
-    : AOPacket(contents)
+    : ServerAOPacket(contents)
 {}
 
 PacketInfo PacketSetcase::getPacketInfo() const

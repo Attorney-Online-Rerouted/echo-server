@@ -1,9 +1,9 @@
 #ifndef PACKET_MS_H
 #define PACKET_MS_H
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class PacketMS : public AOPacket
+class PacketMS : public ServerAOPacket
 {
 public:
   PacketMS(QStringList &contents);
@@ -12,6 +12,6 @@ public:
   virtual bool validatePacket() const;
 
 private:
-  AOPacket *validateIcPacket(AOClient &client) const;
+  ServerAOPacket *validateIcPacket(AOClient &client) const;
 };
 #endif

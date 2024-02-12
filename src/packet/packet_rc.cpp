@@ -4,7 +4,7 @@
 #include <QDebug>
 
 PacketRC::PacketRC(QStringList &contents)
-    : AOPacket(contents)
+    : ServerAOPacket(contents)
 {}
 
 PacketInfo PacketRC::getPacketInfo() const

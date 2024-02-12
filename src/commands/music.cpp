@@ -44,7 +44,7 @@ void AOClient::cmdPlay(int argc, QStringList argv)
   {
     l_area->changeMusic(m_showname, l_song);
   }
-  AOPacket *music_change = PacketFactory::createPacket("MC", {l_song, QString::number(server->getCharID(m_current_char)), m_showname, "1", "0"});
+  ServerAOPacket *music_change = PacketFactory::createPacket("MC", {l_song, QString::number(server->getCharID(m_current_char)), m_showname, "1", "0"});
   server->broadcast(music_change, m_current_area);
 }
 

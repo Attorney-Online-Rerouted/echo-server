@@ -5,7 +5,7 @@
 #include <QDebug>
 
 PacketID::PacketID(QStringList &contents)
-    : AOPacket(contents)
+    : ServerAOPacket(contents)
 {}
 
 PacketInfo PacketID::getPacketInfo() const

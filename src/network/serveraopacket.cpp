@@ -15,7 +15,7 @@
 //    You should have received a copy of the GNU Affero General Public License      //
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.        //
 //////////////////////////////////////////////////////////////////////////////////////
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
 #include "packet/packet_askchaa.h"
 #include "packet/packet_casea.h"
@@ -39,17 +39,17 @@
 #include "packet/packet_setcase.h"
 #include "packet/packet_zz.h"
 
-AOPacket::AOPacket(QStringList p_contents)
+ServerAOPacket::ServerAOPacket(QStringList p_contents)
     : m_content(p_contents)
     , m_escaped(false)
 {}
 
-const QStringList AOPacket::getContent()
+const QStringList ServerAOPacket::getContent()
 {
   return m_content;
 }
 
-QString AOPacket::toString()
+QString ServerAOPacket::toString()
 {
   if (!isPacketEscaped() && !(getPacketInfo().header == "LE"))
   {
@@ -64,46 +64,46 @@ QString AOPacket::toString()
   return QString("%1#%2#%3").arg(getPacketInfo().header, m_content.join("#"), packetFinished);
 }
 
-QByteArray AOPacket::toUtf8()
+QByteArray ServerAOPacket::toUtf8()
 {
   QString l_packet = this->toString();
   return l_packet.toUtf8();
 }
 
-void AOPacket::setContentField(int f_content_index, QString f_content_data)
+void ServerAOPacket::setContentField(int f_content_index, QString f_content_data)
 {
   m_content[f_content_index] = f_content_data;
 }
 
-void AOPacket::escapeContent()
+void ServerAOPacket::escapeContent()
 {
   m_content.replaceInStrings("#", "<num>").replaceInStrings("%", "<percent>").replaceInStrings("$", "<dollar>").replaceInStrings("&", "<and>");
   this->setPacketEscaped(true);
 }
 
-void AOPacket::unescapeContent()
+void ServerAOPacket::unescapeContent()
 {
   m_content.replaceInStrings("<num>", "#").replaceInStrings("<percent>", "%").replaceInStrings("<dollar>", "$").replaceInStrings("<and>", "&");
   this->setPacketEscaped(false);
 }
 
-void AOPacket::escapeEvidence()
+void ServerAOPacket::escapeEvidence()
 {
   m_content.replaceInStrings("#", "<num>").replaceInStrings("%", "<percent>").replaceInStrings("$", "<dollar>");
   this->setPacketEscaped(true);
 }
 
-void AOPacket::setPacketEscaped(bool f_packet_state)
+void ServerAOPacket::setPacketEscaped(bool f_packet_state)
 {
   m_escaped = f_packet_state;
 }
 
-bool AOPacket::isPacketEscaped()
+bool ServerAOPacket::isPacketEscaped()
 {
   return m_escaped;
 }
 
-void AOPacket::registerPackets()
+void ServerAOPacket::registerPackets()
 {
   PacketFactory::registerClass<PacketAskchaa>("askchaa");
   PacketFactory::registerClass<PacketCasea>("CASEA");

@@ -6,7 +6,7 @@
 #include <QQueue>
 
 PacketZZ::PacketZZ(QStringList &contents)
-    : AOPacket(contents)
+    : ServerAOPacket(contents)
 {}
 
 PacketInfo PacketZZ::getPacketInfo() const

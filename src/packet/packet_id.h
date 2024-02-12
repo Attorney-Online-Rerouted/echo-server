@@ -1,9 +1,9 @@
 #ifndef PACKET_ID_H
 #define PACKET_ID_H
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class PacketID : public AOPacket
+class PacketID : public ServerAOPacket
 {
 public:
   PacketID(QStringList &contents);

@@ -1,7 +1,7 @@
 #include "packet/packet_factory.h"
 #include "packet/packet_generic.h"
 
-AOPacket *PacketFactory::createPacket(QString header, QStringList contents)
+ServerAOPacket *PacketFactory::createPacket(QString header, QStringList contents)
 {
   if (!class_map.count(header))
   {
@@ -11,7 +11,7 @@ AOPacket *PacketFactory::createPacket(QString header, QStringList contents)
   return class_map[header](contents);
 }
 
-AOPacket *PacketFactory::createPacket(QString raw_packet)
+ServerAOPacket *PacketFactory::createPacket(QString raw_packet)
 {
   QString header;
   QStringList contents;
@@ -38,7 +38,7 @@ AOPacket *PacketFactory::createPacket(QString raw_packet)
   }
   contents = packet_contents;
 
-  AOPacket *packet = PacketFactory::createPacket(header, contents);
+  ServerAOPacket *packet = PacketFactory::createPacket(header, contents);
   packet->unescapeContent();
 
   return packet;

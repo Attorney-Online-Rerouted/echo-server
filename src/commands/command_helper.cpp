@@ -287,7 +287,7 @@ void AOClient::sendNotice(QString f_notice, bool f_global)
   }
   l_message += "notice:\n\n" + f_notice;
   sendServerMessageArea(l_message);
-  AOPacket *l_packet = PacketFactory::createPacket("BB", {l_message});
+  ServerAOPacket *l_packet = PacketFactory::createPacket("BB", {l_message});
   if (f_global)
   {
     server->broadcast(l_packet);

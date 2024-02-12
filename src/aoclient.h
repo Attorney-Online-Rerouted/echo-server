@@ -26,15 +26,15 @@
 #include <QtGlobal>
 
 #include "acl_roles_handler.h"
-#include "network/aopacket.h"
 #include "network/network_socket.h"
+#include "network/serveraopacket.h"
 
 class AreaData;
 class DBManager;
 class MusicManager;
 class Server;
 class NetworkSocket;
-class AOPacket;
+class ServerAOPacket;
 
 /**
  * @brief Represents a client connected to the server running Attorney Online 2 or one of its derivatives.
@@ -615,7 +615,7 @@ public slots:
    *
    * @param packet The incoming packet.
    */
-  void handlePacket(AOPacket *packet);
+  void handlePacket(ServerAOPacket *packet);
 
   /**
    * @brief A slot for when the client disconnects from the server.
@@ -627,7 +627,7 @@ public slots:
    *
    * @param packet The packet to send.
    */
-  void sendPacket(AOPacket *packet);
+  void sendPacket(ServerAOPacket *packet);
 
   /**
    * @overload
@@ -678,7 +678,7 @@ private:
    * @param AreaData This is always just a reference to the data of the area the sender client is in. Used by some packets.
    * @param int When called, this parameter will be filled with the argument count.
    * @param QStringList When called, this parameter will be filled the list of arguments.
-   * @param AOPacket This is a duplicated version of the QStringList above, containing the same data.
+   * @param ServerAOPacket This is a duplicated version of the QStringList above, containing the same data.
    */
 
   /**

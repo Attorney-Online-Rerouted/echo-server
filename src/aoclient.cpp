@@ -180,7 +180,7 @@ void AOClient::clientDisconnected()
   emit clientSuccessfullyDisconnected(m_id);
 }
 
-void AOClient::handlePacket(AOPacket *packet)
+void AOClient::handlePacket(ServerAOPacket *packet)
 {
 #ifdef NET_DEBUG
   qDebug() << "Received packet:" << packet->getPacketInfo().header << ":" << packet->getContent() << "args length:" << packet->getContent().length();
@@ -441,7 +441,7 @@ void AOClient::fullArup()
   arup(ARUPType::LOCKED, false);
 }
 
-void AOClient::sendPacket(AOPacket *packet)
+void AOClient::sendPacket(ServerAOPacket *packet)
 {
 #ifdef NET_DEBUG
   qDebug() << "Sent packet:" << packet->getPacketInfo().header << ":" << packet->getContent();

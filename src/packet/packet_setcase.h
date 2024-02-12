@@ -1,9 +1,9 @@
 #ifndef PACKET_SETCASE_H
 #define PACKET_SETCASE_H
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class PacketSetcase : public AOPacket
+class PacketSetcase : public ServerAOPacket
 {
 public:
   PacketSetcase(QStringList &contents);

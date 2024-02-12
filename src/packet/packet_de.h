@@ -1,9 +1,9 @@
 #ifndef PACKET_DE_H
 #define PACKET_DE_H
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class PacketDE : public AOPacket
+class PacketDE : public ServerAOPacket
 {
 public:
   PacketDE(QStringList &contents);

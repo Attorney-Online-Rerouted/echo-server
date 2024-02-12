@@ -11,7 +11,15 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-add_executable(echo-server
+if(NOT DEFINED ECHO_BUILD_TYPE)
+set(ECHO_BUILD_TYPE SHARED)
+endif()
+
+if(NOT DEFINED ECHO_BUILD_SERVER_RUNTIME)
+set(ECHO_BUILD_SERVER_RUNTIME ON)
+endif()
+
+add_library(echo-server ${ECHO_BUILD_TYPE}
   src/acl_roles_handler.h src/acl_roles_handler.cpp
   src/advertiser.h src/advertiser.cpp
   src/akashidefs.h
@@ -35,9 +43,8 @@ add_executable(echo-server
   src/logger/u_logger.h src/logger/u_logger.cpp
   src/logger/writer_full.h src/logger/writer_full.cpp
   src/logger/writer_modcall.h src/logger/writer_modcall.cpp
-  src/main.cpp
   src/music_manager.h src/music_manager.cpp
-  src/network/aopacket.h src/network/aopacket.cpp
+  src/network/serveraopacket.h src/network/serveraopacket.cpp
   src/network/network_socket.h src/network/network_socket.cpp
   src/packet/packet_askchaa.h src/packet/packet_askchaa.cpp
   src/packet/packet_casea.h src/packet/packet_casea.cpp
@@ -68,7 +75,7 @@ add_executable(echo-server
   src/typedefs.h
 )
 
-target_include_directories(echo-server PRIVATE
+target_include_directories(echo-server PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
@@ -83,7 +90,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(echo-core)
 endif()
 
-target_link_libraries(echo-server PRIVATE
+target_link_libraries(echo-server PUBLIC
   Qt::Core
   Qt::Sql
   Qt::Network
@@ -91,8 +98,18 @@ target_link_libraries(echo-server PRIVATE
   echo-core
 )
 
-if(WIN32)
-  set_target_properties(echo-server PROPERTIES WIN32_EXECUTABLE true)
-  set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_CURRENT_SOURCE_DIR}/resource/icon.rc")
-  target_sources(echo-server PRIVATE ${APP_ICON_RESOURCE_WINDOWS})
+if (ECHO_BUILD_SERVER_RUNTIME)
+  add_executable(echo-server-runtime WIN32
+    src/main.cpp
+  )
+
+  target_link_libraries(echo-server-runtime PRIVATE
+    echo-server
+  )
+
+  if(WIN32)
+    set_target_properties(echo-server-runtime PROPERTIES WIN32_EXECUTABLE true)
+    set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_CURRENT_SOURCE_DIR}/resource/icon.rc")
+    target_sources(echo-server-runtime PRIVATE ${APP_ICON_RESOURCE_WINDOWS})
+  endif()
 endif()

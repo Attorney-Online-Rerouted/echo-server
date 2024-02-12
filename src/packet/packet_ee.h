@@ -1,9 +1,9 @@
 #ifndef PACKET_EE_H
 #define PACKET_EE_H
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class PacketEE : public AOPacket
+class PacketEE : public ServerAOPacket
 {
 public:
   PacketEE(QStringList &contents);

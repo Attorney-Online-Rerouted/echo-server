@@ -5,7 +5,7 @@
 #include <QDebug>
 
 PacketCH::PacketCH(QStringList &contents)
-    : AOPacket(contents)
+    : ServerAOPacket(contents)
 {}
 
 PacketInfo PacketCH::getPacketInfo() const

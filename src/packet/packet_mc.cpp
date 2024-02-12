@@ -6,7 +6,7 @@
 #include <QDebug>
 
 PacketMC::PacketMC(QStringList &contents)
-    : AOPacket(contents)
+    : ServerAOPacket(contents)
 {}
 
 PacketInfo PacketMC::getPacketInfo() const
@@ -80,7 +80,7 @@ void PacketMC::handlePacket(AreaData *area, AOClient &client) const
       QPair<QString, float> l_song = client.m_music_manager->songInformation(l_final_song, client.m_current_area);
       l_final_song = l_song.first;
     }
-    AOPacket *l_music_change = PacketFactory::createPacket("MC", {l_final_song, m_content[1], client.m_showname, "1", "0", l_effects});
+    ServerAOPacket *l_music_change = PacketFactory::createPacket("MC", {l_final_song, m_content[1], client.m_showname, "1", "0", l_effects});
     client.getServer()->broadcast(l_music_change, client.m_current_area);
 
     // Since we can't ensure a user has their showname set, we check if its empty to prevent

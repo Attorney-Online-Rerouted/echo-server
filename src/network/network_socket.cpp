@@ -112,7 +112,7 @@ void NetworkSocket::readData()
 
   for (const QString &l_single_packet : qAsConst(l_all_packets))
   {
-    AOPacket *l_packet = PacketFactory::createPacket(l_single_packet);
+      ServerAOPacket *l_packet = PacketFactory::createPacket(l_single_packet);
     if (!l_packet)
     {
       qDebug() << "Unimplemented packet: " << l_single_packet;
@@ -143,7 +143,7 @@ void NetworkSocket::ws_readData(QString f_data)
 
   for (const QString &l_single_packet : qAsConst(l_all_packets))
   {
-    AOPacket *l_packet = PacketFactory::createPacket(l_single_packet);
+      ServerAOPacket *l_packet = PacketFactory::createPacket(l_single_packet);
     if (!l_packet)
     {
       qDebug() << "Unimplemented packet: " << l_single_packet;
@@ -154,7 +154,7 @@ void NetworkSocket::ws_readData(QString f_data)
   }
 }
 
-void NetworkSocket::write(AOPacket *f_packet)
+void NetworkSocket::write(ServerAOPacket *f_packet)
 {
   if (m_socket_type == TCP)
   {

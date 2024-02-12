@@ -1,9 +1,9 @@
 #ifndef PACKET_GENERIC_H
 #define PACKET_GENERIC_H
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class PacketGeneric : public AOPacket
+class PacketGeneric : public ServerAOPacket
 {
 public:
   PacketGeneric(QString header, QStringList contents);

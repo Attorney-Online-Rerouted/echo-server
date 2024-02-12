@@ -1,9 +1,9 @@
 #ifndef PACKET_CH_H
 #define PACKET_CH_H
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class PacketCH : public AOPacket
+class PacketCH : public ServerAOPacket
 {
 public:
   PacketCH(QStringList &contents);

@@ -7,7 +7,7 @@
 #include <QDebug>
 
 PacketCT::PacketCT(QStringList &contents)
-    : AOPacket(contents)
+    : ServerAOPacket(contents)
 {}
 
 PacketInfo PacketCT::getPacketInfo() const
@@ -47,7 +47,7 @@ void PacketCT::handlePacket(AreaData *area, AOClient &client) const
   {
     return;
   }
-  AOPacket *final_packet = PacketFactory::createPacket("CT", {client.m_ooc_name, l_message, "0"});
+  ServerAOPacket *final_packet = PacketFactory::createPacket("CT", {client.m_ooc_name, l_message, "0"});
   if (l_message.at(0) == '/')
   {
     QStringList l_cmd_argv = l_message.split(" ", akashi::SkipEmptyParts);

@@ -1,9 +1,9 @@
 #ifndef PACKET_RD_H
 #define PACKET_RD_H
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class PacketRD : public AOPacket
+class PacketRD : public ServerAOPacket
 {
 public:
   PacketRD(QStringList &contents);

@@ -23,9 +23,9 @@
 #include <QTcpSocket>
 #include <QWebSocket>
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class AOPacket;
+class ServerAOPacket;
 
 class NetworkSocket : public QObject
 {
@@ -75,7 +75,7 @@ public:
    *
    * @param Packet to be written to the socket.
    */
-  void write(AOPacket *f_packet);
+  void write(ServerAOPacket *f_packet);
 
 signals:
 
@@ -83,7 +83,7 @@ signals:
    * @brief handlePacket
    * @param f_packet
    */
-  void handlePacket(AOPacket *f_packet);
+  void handlePacket(ServerAOPacket *f_packet);
 
   /**
    * @brief Emitted when the socket has been closed and the client is disconnected.
@@ -94,14 +94,14 @@ private slots:
   /**
    * @brief Handles the reading and processing of TCP stream data.
    *
-   * @return Decoded AOPacket to be processed by the child AOClient object.
+   * @return Decoded ServerAOPacket to be processed by the child AOClient object.
    */
   void readData();
 
   /**
    * @brief Handles the processing of WebSocket data.
    *
-   * @return Decoded AOPacket to be processed by the child AOClient object.
+   * @return Decoded ServerAOPacket to be processed by the child AOClient object.
    */
   void ws_readData(QString f_data);
 

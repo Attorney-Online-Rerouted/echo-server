@@ -3,7 +3,7 @@
 #include <QDebug>
 
 PacketGeneric::PacketGeneric(QString header, QStringList contents)
-    : AOPacket(contents)
+    : ServerAOPacket(contents)
     , header(header)
 {}
 

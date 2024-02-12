@@ -1,9 +1,9 @@
 #ifndef PACKET_MC_H
 #define PACKET_MC_H
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class PacketMC : public AOPacket
+class PacketMC : public ServerAOPacket
 {
 public:
   PacketMC(QStringList &contents);

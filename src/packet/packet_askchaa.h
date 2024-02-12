@@ -1,9 +1,9 @@
 #ifndef PACKET_ASKCHAA_H
 #define PACKET_ASKCHAA_H
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class PacketAskchaa : public AOPacket
+class PacketAskchaa : public ServerAOPacket
 {
 public:
   PacketAskchaa(QStringList &contents);

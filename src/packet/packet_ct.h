@@ -1,9 +1,9 @@
 #ifndef PACKET_CT_H
 #define PACKET_CT_H
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class PacketCT : public AOPacket
+class PacketCT : public ServerAOPacket
 {
 public:
   PacketCT(QStringList &contents);

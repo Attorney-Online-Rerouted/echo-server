@@ -25,12 +25,12 @@
 #include <QString>
 #include <QTimer>
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
 class ConfigManager;
 class Logger;
 class MusicManager;
-class AOPacket;
+class ServerAOPacket;
 
 /**
  * @brief Represents an area on the server, a distinct "room" for people to chat in.
@@ -927,7 +927,7 @@ signals:
   /**
    * @brief Sends a packet to every client inside the area.
    */
-  void sendAreaPacket(AOPacket *f_packet, int f_area_index);
+  void sendAreaPacket(ServerAOPacket *f_packet, int f_area_index);
 
   /**
    * @brief sendAreaPacketClient Sends a packet to the specified client.
@@ -936,7 +936,7 @@ signals:
    *
    * @param f_user_id The user ID of the client.
    */
-  void sendAreaPacketClient(AOPacket *f_packet, int f_user_id);
+  void sendAreaPacketClient(ServerAOPacket *f_packet, int f_user_id);
 
   /**
    * @brief userJoinedArea Signals that a new client has joined an area.

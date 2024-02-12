@@ -6,7 +6,7 @@
 #include <QDebug>
 
 PacketCasea::PacketCasea(QStringList &contents)
-    : AOPacket(contents)
+    : ServerAOPacket(contents)
 {}
 
 PacketInfo PacketCasea::getPacketInfo() const

@@ -1,9 +1,9 @@
 #ifndef PACKET_CASEA_H
 #define PACKET_CASEA_H
 
-#include "network/aopacket.h"
+#include "network/serveraopacket.h"
 
-class PacketCasea : public AOPacket
+class PacketCasea : public ServerAOPacket
 {
 public:
   PacketCasea(QStringList &contents);

@@ -4,7 +4,7 @@
 #include <QDebug>
 
 PacketPW::PacketPW(QStringList &contents)
-    : AOPacket(contents)
+    : ServerAOPacket(contents)
 {}
 
 PacketInfo PacketPW::getPacketInfo() const
