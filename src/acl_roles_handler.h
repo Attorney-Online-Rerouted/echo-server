@@ -1,10 +1,12 @@
 #pragma once
 
+#include "server_global.h"
+
 #include <QFlags>
 #include <QHash>
 #include <QObject>
 
-class ACLRole
+class ECHO_SERVER_EXPORT ACLRole
 {
   Q_GADGET
 
@@ -104,7 +106,7 @@ Q_DECLARE_METATYPE(ACLRole::Permission)
 
 class QSettings;
 
-class ACLRolesHandler : public QObject
+class ECHO_SERVER_EXPORT ACLRolesHandler : public QObject
 {
   Q_OBJECT
 

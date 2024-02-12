@@ -1,9 +1,9 @@
-#ifndef PACKET_CC_H
-#define PACKET_CC_H
+#pragma once
 
 #include "network/serveraopacket.h"
+#include "server_global.h"
 
-class PacketCC : public ServerAOPacket
+class ECHO_SERVER_EXPORT PacketCC : public ServerAOPacket
 {
 public:
   PacketCC(QStringList &contents);
@@ -11,4 +11,3 @@ public:
   virtual void handlePacket(AreaData *area, AOClient &client) const;
   virtual bool validatePacket() const;
 };
-#endif

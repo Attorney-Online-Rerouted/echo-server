@@ -5,6 +5,8 @@
 
 namespace akashi
 {
+Q_NAMESPACE_EXPORT(ECHO_SERVER_EXPORT)
+
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
 using SplitBehavior = QString::SplitBehavior;
 #else

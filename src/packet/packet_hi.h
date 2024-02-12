@@ -1,9 +1,9 @@
-#ifndef PACKET_HI_H
-#define PACKET_HI_H
+#pragma once
 
 #include "network/serveraopacket.h"
+#include "server_global.h"
 
-class PacketHI : public ServerAOPacket
+class ECHO_SERVER_EXPORT PacketHI : public ServerAOPacket
 {
 public:
   PacketHI(QStringList &contents);
@@ -14,4 +14,3 @@ public:
 private:
   QString header;
 };
-#endif

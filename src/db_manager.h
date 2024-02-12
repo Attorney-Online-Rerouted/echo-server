@@ -1,20 +1,3 @@
-//////////////////////////////////////////////////////////////////////////////////////
-//    akashi - a server for Attorney Online 2                                       //
-//    Copyright (C) 2020  scatterflower                                           //
-//                                                                                  //
-//    This program is free software: you can redistribute it and/or modify          //
-//    it under the terms of the GNU Affero General Public License as                //
-//    published by the Free Software Foundation, either version 3 of the            //
-//    License, or (at your option) any later version.                               //
-//                                                                                  //
-//    This program is distributed in the hope that it will be useful,               //
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of                //
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                 //
-//    GNU Affero General Public License for more details.                           //
-//                                                                                  //
-//    You should have received a copy of the GNU Affero General Public License      //
-//    along with this program.  If not, see <https://www.gnu.org/licenses/>.        //
-//////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
 #define DB_VERSION 2
@@ -40,7 +23,7 @@
  * differently than the average user.
  * This comes in two forms, when the user's client is banned, and when the user is a moderator.
  */
-class DBManager : public QObject
+class ECHO_SERVER_EXPORT DBManager : public QObject
 {
   Q_OBJECT
 

@@ -1,9 +1,9 @@
-#ifndef PACKET_GENERIC_H
-#define PACKET_GENERIC_H
+#pragma once
 
 #include "network/serveraopacket.h"
+#include "server_global.h"
 
-class PacketGeneric : public ServerAOPacket
+class ECHO_SERVER_EXPORT PacketGeneric : public ServerAOPacket
 {
 public:
   PacketGeneric(QString header, QStringList contents);
@@ -14,4 +14,3 @@ public:
 private:
   QString header;
 };
-#endif

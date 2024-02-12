@@ -1,9 +1,9 @@
-#ifndef PACKET_CASEA_H
-#define PACKET_CASEA_H
+#pragma once
 
 #include "network/serveraopacket.h"
+#include "server_global.h"
 
-class PacketCasea : public ServerAOPacket
+class ECHO_SERVER_EXPORT PacketCasea : public ServerAOPacket
 {
 public:
   PacketCasea(QStringList &contents);
@@ -11,4 +11,3 @@ public:
   virtual void handlePacket(AreaData *area, AOClient &client) const;
   virtual bool validatePacket() const;
 };
-#endif

@@ -1,30 +1,14 @@
-//////////////////////////////////////////////////////////////////////////////////////
-//    akashi - a server for Attorney Online 2                                       //
-//    Copyright (C) 2020  scatterflower                                             //
-//                                                                                  //
-//    This program is free software: you can redistribute it and/or modify          //
-//    it under the terms of the GNU Affero General Public License as                //
-//    published by the Free Software Foundation, either version 3 of the            //
-//    License, or (at your option) any later version.                               //
-//                                                                                  //
-//    This program is distributed in the hope that it will be useful,               //
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of                //
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                 //
-//    GNU Affero General Public License for more details.                           //
-//                                                                                  //
-//    You should have received a copy of the GNU Affero General Public License      //
-//    along with this program.  If not, see <https://www.gnu.org/licenses/>.        //
-//////////////////////////////////////////////////////////////////////////////////////
 #pragma once
+
+#include "aoclient.h"
+#include "area_data.h"
+#include "packet/packet_info.h"
+#include "server_global.h"
 
 #include <QByteArray>
 #include <QDebug>
 #include <QString>
 #include <QStringList>
-
-#include "aoclient.h"
-#include "area_data.h"
-#include "packet/packet_info.h"
 
 class AOClient;
 
@@ -34,7 +18,7 @@ class AOClient;
  * @see https://github.com/AttorneyOnline/docs/blob/master/docs/development/network.md for a general explanation
  * on Attorney Online 2's network protocol.
  */
-class ServerAOPacket
+class ECHO_SERVER_EXPORT ServerAOPacket
 {
 public:
   ServerAOPacket(QStringList p_contents);

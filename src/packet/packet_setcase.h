@@ -1,9 +1,9 @@
-#ifndef PACKET_SETCASE_H
-#define PACKET_SETCASE_H
+#pragma once
 
 #include "network/serveraopacket.h"
+#include "server_global.h"
 
-class PacketSetcase : public ServerAOPacket
+class ECHO_SERVER_EXPORT PacketSetcase : public ServerAOPacket
 {
 public:
   PacketSetcase(QStringList &contents);
@@ -11,4 +11,3 @@ public:
   virtual void handlePacket(AreaData *area, AOClient &client) const;
   virtual bool validatePacket() const;
 };
-#endif

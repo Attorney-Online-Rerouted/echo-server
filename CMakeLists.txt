@@ -73,6 +73,11 @@ add_library(echo-server ${ECHO_BUILD_TYPE}
   src/server.h src/server.cpp
   src/testimony_recorder.cpp
   src/typedefs.h
+  src/server_global.h
+)
+
+target_compile_definitions(echo-server PRIVATE
+  ECHO_SERVER_LIBRARY
 )
 
 target_include_directories(echo-server PUBLIC

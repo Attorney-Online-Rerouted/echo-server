@@ -7,7 +7,7 @@
 
 #include "acl_roles_handler.h"
 
-class CommandExtension
+class ECHO_SERVER_EXPORT CommandExtension
 {
 public:
   /**

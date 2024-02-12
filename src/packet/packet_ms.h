@@ -1,9 +1,9 @@
-#ifndef PACKET_MS_H
-#define PACKET_MS_H
+#pragma once
 
 #include "network/serveraopacket.h"
+#include "server_global.h"
 
-class PacketMS : public ServerAOPacket
+class ECHO_SERVER_EXPORT PacketMS : public ServerAOPacket
 {
 public:
   PacketMS(QStringList &contents);
@@ -14,4 +14,3 @@ public:
 private:
   ServerAOPacket *validateIcPacket(AOClient &client) const;
 };
-#endif
